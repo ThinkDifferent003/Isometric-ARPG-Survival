@@ -19,8 +19,9 @@ public class PlayerDataSO : ScriptableObject
     [Tooltip("Percentuale di Fortuna per colpi critici")]
     [SerializeField] private float _luck;
 
-    [Header("Stamina & Dash Settings")]
+    [Header("Stamina & Actions Settings")]
     [SerializeField] private float _dashStaminaCost;
+    [SerializeField] private float _rangedStaminaCost;
     [SerializeField] private float _staminaRegenRate;
 
     public float MaxHealth => _maxHealth;
@@ -29,5 +30,6 @@ public class PlayerDataSO : ScriptableObject
     public float Attack => _attack;
     public float Luck => _luck;
     public float DashStaminaCost => _dashStaminaCost;
+    public float RangedStaminaCost => _rangedStaminaCost;
     public float StaminaRegenRate => _staminaRegenRate;
 }

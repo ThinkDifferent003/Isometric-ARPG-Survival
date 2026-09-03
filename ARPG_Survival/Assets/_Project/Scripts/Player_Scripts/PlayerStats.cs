@@ -32,7 +32,7 @@ public class PlayerStats : MonoBehaviour
         if (CurrentStamina >= amount)
         {
             CurrentStamina -= amount;
-            Debug.Log($"<color=yellow>[Stamina Spesa] Usati {amount} di Stamina per il Dash. Rimanente: {CurrentStamina:F1} / {_playerData.MaxStamina}</color>");
+            Debug.Log($"<color=yellow>[Stamina Spesa] Usati {amount} di Stamina per l'Azione. Rimanente: {CurrentStamina:F1} / {_playerData.MaxStamina}</color>");
             OnStaminaChanged?.Invoke(CurrentStamina, _playerData.MaxStamina);
             return true;
         }
