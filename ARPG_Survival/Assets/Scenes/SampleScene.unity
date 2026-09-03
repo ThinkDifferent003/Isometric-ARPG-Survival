@@ -508,7 +508,7 @@ GameObject:
   - component: {fileID: 505744768}
   - component: {fileID: 505744767}
   - component: {fileID: 505744766}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -673,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 250fda3ee267b1e4bb6de359c63a0fe1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  _mainCam: {fileID: 0}
+  _mainCam: {fileID: 330585545}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 64
