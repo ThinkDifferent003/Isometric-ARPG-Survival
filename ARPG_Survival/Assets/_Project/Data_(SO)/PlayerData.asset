@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41cea17af80332249bb622527d8384c9, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDataSO
-  _maxHealth: 0
-  _defense: 0
-  _maxStamina: 0
-  _attack: 0
-  _luck: 0
+  _maxHealth: 100
+  _defense: 10
+  _maxStamina: 50
+  _attack: 20
+  _luck: 2
+  _dashStaminaCost: 20
+  _rangedStaminaCost: 15
+  _staminaRegenRate: 2.5

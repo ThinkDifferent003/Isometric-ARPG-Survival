@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_isDashing) return;
         HandleInput();
+        RotateToMouse();
     }
     private void HandleInput()
     {
@@ -77,5 +78,17 @@ public class PlayerMovement : MonoBehaviour
     public void StopMovement()
     {
         if (_agent != null && _agent.enabled) _agent.ResetPath();
+    }
+    private void RotateToMouse()
+    {
+        Ray ray = _mainCam.ScreenPointToRay(Input.mousePosition);
+        Plane playerPlane = new Plane(Vector3.up, transform.position);
+        if (playerPlane.Raycast(ray, out float entry))
+        {
+            Vector3 worldMousePosition = ray.GetPoint(entry);
+            Vector3 dir = worldMousePosition - transform.position;
+            dir.y = 0;
+            if (dir != Vector3.zero) transform.rotation = Quaternion.LookRotation(dir);
+        }
     }
 }

@@ -28,6 +28,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player")) return;
+        if (other.TryGetComponent<IDamageable>(out var target)) target.TakeDamage(_dmg);
         Debug.Log($"<color=orange>[Proiettile] Colpito: {other.name} per {_dmg} danni!</color>");
         ReturnSelf();
     }
