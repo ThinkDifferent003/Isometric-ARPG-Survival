@@ -17,8 +17,12 @@ public class EnemyDataSO : ScriptableObject
     [Tooltip("Nome del nemico")]
     [SerializeField] private string _enemyName;
 
+    [Header("Experience Settings")]
+    [SerializeField] private float _baseXpReward;
+
     public float MaxHealth => _maxHealth;
     public float Atk => _atk;
     public float Def => _def;
     public string EnemyName => _enemyName;
+    public float BaseXpReward => _baseXpReward;
 }

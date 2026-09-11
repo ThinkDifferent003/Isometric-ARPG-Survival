@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     }
     private void Die()
     {
+        if (TryGetComponent<EnemyExperienceDrop>(out var xpDrop)) xpDrop.DropExperience();
         Debug.Log($"<color=black>[Enemy] {gameObject.name} è stato sconfitto!</color>");
     }
 }
