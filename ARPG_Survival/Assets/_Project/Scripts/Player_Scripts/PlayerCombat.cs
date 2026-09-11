@@ -54,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
 
         Projectile proj = projObj.GetComponent<Projectile>();
         float atk = _playerStats.PlayerData.Attack;
-        if (proj != null) proj.Initialize(atk);
+        if (proj != null) proj.Initialize(atk, "Player");
 
         Debug.Log($"<color=cyan>[Combat] Sparato proiettile con danno base: {atk}</color>");
         return true;
