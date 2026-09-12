@@ -9,11 +9,6 @@ public class EnemyExperienceDrop : MonoBehaviour
     [SerializeField] private int _enemyLevel;
     [SerializeField] private float _xpMultiplierPerLevel;
     private float _baseXpReward;
-    
-
-    [Header("Drop Prefab")]
-    [SerializeField] private GameObject _xpOrbPrefab;
-
 
     private void Awake()
     {
@@ -21,9 +16,12 @@ public class EnemyExperienceDrop : MonoBehaviour
     }
     public void DropExperience()
     {
-        if (_xpOrbPrefab == null) return;
         float totalXp = _baseXpReward * Mathf.Pow(_xpMultiplierPerLevel, _enemyLevel - 1);
-        GameObject orbInstance = Instantiate(_xpOrbPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
-        if (orbInstance.TryGetComponent<ExperienceOrb>(out var xpOrb)) xpOrb.SetXpValue(totalXp);
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null && player.TryGetComponent<PlayerLevelSystem>(out var playerLevel)) playerLevel.AddExperience(totalXp);
+    }
+    public void SetEnemyLevel(int lvl)
+    {
+        _enemyLevel = lvl;
     }
 }

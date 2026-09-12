@@ -16,3 +16,4 @@ MonoBehaviour:
   _atk: 5
   _def: 5
   _enemyName: Numero_01
+  _baseXpReward: 10
