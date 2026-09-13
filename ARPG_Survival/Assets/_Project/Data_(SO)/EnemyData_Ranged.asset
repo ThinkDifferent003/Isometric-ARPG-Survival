@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d1d3aee90a7e73a45b2fd13bf45bde3c, type: 3}
-  m_Name: EnemyData_01
+  m_Name: EnemyData_Ranged
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDataSO
-  _maxHealth: 20
-  _atk: 5
-  _def: 5
-  _enemyName: Numero_01
-  _baseXpReward: 10
+  _maxHealth: 0
+  _atk: 0
+  _def: 0
+  _enemyName: 
+  _baseXpReward: 0

@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce9c457b36c9d424abd41d9c3fe6cbc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
-  _enemyData: {fileID: 11400000, guid: 1dee810ffa977b141a076e0e9423167a, type: 2}
+  _enemyData: {fileID: 11400000, guid: b8f5c1b42c391854c8aab2b8a951192e, type: 2}
 --- !u!195 &5213261045896188777
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15f92cc5857d8db43bd7396382cf2a23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRanged
-  _enemyData: {fileID: 11400000, guid: 1dee810ffa977b141a076e0e9423167a, type: 2}
+  _enemyData: {fileID: 11400000, guid: b8f5c1b42c391854c8aab2b8a951192e, type: 2}
   _atkRange: 1.5
   _preferredDistance: 7
   _strafeSpeed: 3
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b322fc7681a6edb43bc23bd181803d02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyExperienceDrop
-  _enemyData: {fileID: 11400000, guid: 1dee810ffa977b141a076e0e9423167a, type: 2}
+  _enemyData: {fileID: 11400000, guid: b8f5c1b42c391854c8aab2b8a951192e, type: 2}
   _enemyLevel: 1
   _xpMultiplierPerLevel: 1.5
 --- !u!1 &8175413525180835037

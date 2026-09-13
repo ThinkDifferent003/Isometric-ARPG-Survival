@@ -2,6 +2,7 @@ using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class TimerUI : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class TimerUI : MonoBehaviour
     [Header("Game Over / Leaderboard Panel")]
     [SerializeField] private GameObject _leaderboardPanel;
     [SerializeField] private TextMeshProUGUI _topTimesText;
+
+    [Header("End Game Action Panel")]
+    [SerializeField] private GameObject _endGameActionsPanel;
 
     private void Update()
     {
@@ -31,5 +35,19 @@ public class TimerUI : MonoBehaviour
             _topTimesText.text = "<b>TOP 5 TEMPI DI SOPRAVVIVENZA</b>\n\n";
             for (int i = 0; i < topTimes.Count; i++) _topTimesText.text += $"{i + 1}. {FormatTime(topTimes[i])}\n";
         }
+    }
+    public void OpenEndGameActionsPanel()
+    {
+        if (_leaderboardPanel != null) _leaderboardPanel.SetActive(false);
+        if (_endGameActionsPanel != null) _endGameActionsPanel.SetActive(true);
+    }
+    public void RestartGame()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
