@@ -10,6 +10,9 @@ public class PlayerStats : MonoBehaviour, IDamageable
 
     public static event Action<float, float> OnHealthChanged;
     public static event Action<float, float> OnStaminaChanged;
+    public static event Action OnPlayerDied;
+
+    private bool _isDead;
 
     private void Awake()
     {
@@ -39,7 +42,20 @@ public class PlayerStats : MonoBehaviour, IDamageable
         if (CurrentHealth <= 0)
         {
             Debug.Log("<color=black>[Player] Il Player è morto!</color>");
+            Die();
         }
+    }
+    private void Die()
+    {
+        if (_isDead) return;
+        _isDead = true;
+        Debug.Log("<color=black>[Player] Il Player è morto!</color>");
+        OnPlayerDied?.Invoke();
+        if (GameTimerManager.Instance != null) GameTimerManager.Instance.StopTimerAndSaveRecord();
+        if (WaveManager.Instance != null) WaveManager.Instance.enabled = false;
+        Time.timeScale = 0f;
+        FindFirstObjectByType<TimerUI>()?.ShowLeaderboard();
+        gameObject.SetActive(false);
     }
     private void RegenerateStamina()
     {

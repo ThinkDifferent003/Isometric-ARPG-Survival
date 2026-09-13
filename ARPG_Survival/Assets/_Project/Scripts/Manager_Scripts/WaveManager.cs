@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
+    public static WaveManager Instance { get; private set; }
+
     [Header("References")]
     [SerializeField] private PlayerLevelSystem _playerLevelSystem;
     [SerializeField] private EnemySpawner[] _spawners;
@@ -19,6 +21,8 @@ public class WaveManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+        else Destroy (gameObject);
         if (_playerLevelSystem == null) _playerLevelSystem = FindFirstObjectByType<PlayerLevelSystem>();
         if (_spawners == null || _spawners.Length == 0) _spawners = FindObjectsByType<EnemySpawner>(FindObjectsSortMode.None);
         _currentSpawnInterval = _initialSpawnInterval;
